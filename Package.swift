@@ -16,7 +16,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/Kamaalio/SalmonUI.git", "5.1.0" ..< "6.0.0"),
-        .package(path: "../SwiftStructures")
+        .package(url: "https://github.com/kamaal111/SwiftStructures.git", "1.0.0" ..< "2.0.0"),
     ],
     targets: [
         .target(

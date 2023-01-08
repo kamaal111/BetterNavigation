@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "salmonui",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Kamaalio/SalmonUI.git",
+      "state" : {
+        "revision" : "66deec6d366d36f148ea20a11a4910fd49f59f07",
+        "version" : "5.1.1"
+      }
+    },
+    {
+      "identity" : "swiftstructures",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/kamaal111/SwiftStructures.git",
+      "state" : {
+        "revision" : "5a294b799d5dff2dc758a8566f388b7060ca43e5",
+        "version" : "1.0.0"
+      }
+    }
+  ],
+  "version" : 2
+}
