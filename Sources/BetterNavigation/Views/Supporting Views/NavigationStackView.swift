@@ -59,7 +59,7 @@ public struct NavigationStackView<Root: View, SubView: View, Sidebar: View, Scre
             .environmentObject(navigator)
         } else {
             TabView(selection: $navigator.currentStack) {
-                ForEach(navigator.screens, id: \.self) { screen in
+                ForEach(navigator.screens.filter(\.isTabItem), id: \.self) { screen in
                     NavigationView {
                         root(screen)
                     }
