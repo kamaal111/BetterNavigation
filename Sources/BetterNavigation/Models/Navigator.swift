@@ -8,7 +8,7 @@
 import SwiftUI
 import SwiftStructures
 
-final class Navigator<StackValue: NavigatorStackValue>: ObservableObject {
+public final class Navigator<StackValue: NavigatorStackValue>: ObservableObject {
     @Published private var stacks: [StackValue: Stack<StackValue>]
     @Published var currentStack: StackValue
 
@@ -36,13 +36,28 @@ final class Navigator<StackValue: NavigatorStackValue>: ObservableObject {
         currentStack = stack
     }
 
+    /// Navigates to the given destination.
+    ///
+    /// WARNING: This method only works on macOS.
+    /// - Parameter destination: Where to navigate to.
     @MainActor
-    func navigate(to destination: StackValue) {
+    public func navigate(to destination: StackValue) {
+        #if !os(macOS)
+        assertionFailure("This method is only supported on macOS")
+        #else
         withAnimation { stacks[currentStack]?.push(destination) }
+        #endif
     }
 
+    /// Navigates back.
+    ///
+    /// WARNING: This method only works on macOS.
     @MainActor
-    func goBack() {
+    public func goBack() {
+        #if !os(macOS)
+        assertionFailure("This method is only supported on macOS")
+        #else
         withAnimation { _ = stacks[currentStack]?.pop() }
+        #endif
     }
 }
