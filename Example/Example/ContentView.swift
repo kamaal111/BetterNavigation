@@ -21,7 +21,17 @@ struct ContentView: View {
 
 struct HomeScreen: View {
     var body: some View {
-        Text("Home")
+        StackNavigationLink(destination: Screens.other, nextView: { screen in MainView(screen: screen, displayMode: .inline) }) {
+            Text("Go to other screen")
+        }
+    }
+}
+
+struct OtherScreen: View {
+    var body: some View {
+        StackNavigationBackButton(screenType: Screens.self) {
+            Text("Back")
+        }
     }
 }
 
@@ -40,6 +50,8 @@ struct MainView: View {
             switch screen {
             case .home:
                 HomeScreen()
+            case .other:
+                OtherScreen()
             }
         }
         .navigationTitle(title: screen.title, displayMode: displayMode)
@@ -79,11 +91,14 @@ struct Sidebar: View {
 
 enum Screens: Hashable, Codable, CaseIterable, NavigatorStackValue {
     case home
+    case other
 
     var title: String {
         switch self {
         case .home:
             return "Home"
+        case .other:
+            return "Other"
         }
     }
 
@@ -91,6 +106,8 @@ enum Screens: Hashable, Codable, CaseIterable, NavigatorStackValue {
         switch self {
         case .home:
             return "house.fill"
+        default:
+            return ""
         }
     }
 
@@ -98,6 +115,8 @@ enum Screens: Hashable, Codable, CaseIterable, NavigatorStackValue {
         switch self {
         case .home:
             return true
+        case .other:
+            return false
         }
     }
 
@@ -105,6 +124,8 @@ enum Screens: Hashable, Codable, CaseIterable, NavigatorStackValue {
         switch self {
         case .home:
             return true
+        case .other:
+            return false
         }
     }
 
