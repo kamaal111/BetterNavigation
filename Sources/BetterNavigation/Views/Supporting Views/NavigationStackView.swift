@@ -75,6 +75,12 @@ public struct NavigationStackView<Root: View, SubView: View, Sidebar: View, Scre
         }
         #endif
     }
+
+    public func onScreenChange(_ perform: @escaping (Screen) -> Void) -> some View {
+        onReceive(NotificationCenter.default.publisher(for: .hasChangedScreens)) { output in
+            perform(output.object as? Screen ?? .root)
+        }
+    }
 }
 
 #if DEBUG

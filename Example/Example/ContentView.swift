@@ -16,6 +16,9 @@ struct ContentView: View {
             root: { screen in MainView(screen: screen) },
             subView: { screen in MainView(screen: screen, displayMode: .inline) },
             sidebar: { Sidebar() })
+        .onScreenChange { screen in
+            print("screen", screen)
+        }
     }
 }
 

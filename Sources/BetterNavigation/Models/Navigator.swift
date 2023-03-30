@@ -9,7 +9,9 @@ import SwiftUI
 import SwiftStructures
 
 public final class Navigator<StackValue: NavigatorStackValue>: ObservableObject {
-    @Published private var stacks: [StackValue: Stack<StackValue>]
+    @Published private var stacks: [StackValue: Stack<StackValue>] {
+        didSet { stacksDidSet() }
+    }
     @Published var currentStack: StackValue
 
     private let notifications: [Notification.Name] = [
@@ -116,10 +118,15 @@ public final class Navigator<StackValue: NavigatorStackValue>: ObservableObject 
             assertionFailure("Unhandled notification")
         }
     }
+
+    private func stacksDidSet() {
+        NotificationCenter.default.post(name: .hasChangedScreens, object: currentScreen)
+    }
 }
 
 extension Notification.Name {
     static let navigate = makeNotificationName(withKey: "navigate")
+    public static let hasChangedScreens = makeNotificationName(withKey: "has_changed_screens")
 
     private static func makeNotificationName(withKey key: String) -> Notification.Name {
         Notification.Name("io.kamaal.BetterNavigation.notifications.\(key)")
