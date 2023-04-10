@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Kamaalio/SalmonUI.git",
       "state" : {
-        "revision" : "66deec6d366d36f148ea20a11a4910fd49f59f07",
-        "version" : "5.1.1"
+        "revision" : "7d45d261e757c7102f8f3160861c86f9dfab1e04",
+        "version" : "6.0.0"
       }
     },
     {

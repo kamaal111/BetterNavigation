@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C927AA929E471A30064D685 /* BetterNavigation in Frameworks */ = {isa = PBXBuildFile; productRef = 2C927AA829E471A30064D685 /* BetterNavigation */; };
 		2CDDFAAF2972FEE900EE571A /* ExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDDFAAE2972FEE900EE571A /* ExampleApp.swift */; };
 		2CDDFAB12972FEE900EE571A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDDFAB02972FEE900EE571A /* ContentView.swift */; };
 		2CDDFAB32972FEEC00EE571A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CDDFAB22972FEEC00EE571A /* Assets.xcassets */; };
 		2CDDFAB72972FEEC00EE571A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CDDFAB62972FEEC00EE571A /* Preview Assets.xcassets */; };
-		2CDDFAC22973000400EE571A /* BetterNavigation in Frameworks */ = {isa = PBXBuildFile; productRef = 2CDDFAC12973000400EE571A /* BetterNavigation */; };
 		2CDDFAC5297301AD00EE571A /* SalmonUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2CDDFAC4297301AD00EE571A /* SalmonUI */; };
 /* End PBXBuildFile section */
 
@@ -30,8 +30,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C927AA929E471A30064D685 /* BetterNavigation in Frameworks */,
 				2CDDFAC5297301AD00EE571A /* SalmonUI in Frameworks */,
-				2CDDFAC22973000400EE571A /* BetterNavigation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,8 +100,8 @@
 			);
 			name = Example;
 			packageProductDependencies = (
-				2CDDFAC12973000400EE571A /* BetterNavigation */,
 				2CDDFAC4297301AD00EE571A /* SalmonUI */,
+				2C927AA829E471A30064D685 /* BetterNavigation */,
 			);
 			productName = Example;
 			productReference = 2CDDFAAB2972FEE900EE571A /* Example.app */;
@@ -382,13 +382,13 @@
 			repositoryURL = "https://github.com/Kamaalio/SalmonUI.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 5.1.1;
+				minimumVersion = 6.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2CDDFAC12973000400EE571A /* BetterNavigation */ = {
+		2C927AA829E471A30064D685 /* BetterNavigation */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = BetterNavigation;
 		};
