@@ -125,7 +125,7 @@ public final class Navigator<StackValue: NavigatorStackValue>: ObservableObject 
 }
 
 extension Notification.Name {
-    static let navigate = makeNotificationName(withKey: "navigate")
+    public static let navigate = makeNotificationName(withKey: "navigate")
     public static let hasChangedScreens = makeNotificationName(withKey: "has_changed_screens")
 
     private static func makeNotificationName(withKey key: String) -> Notification.Name {
